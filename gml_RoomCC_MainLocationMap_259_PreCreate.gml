@@ -1,0 +1,1 @@
+TextureSprite = sTitleTex_ArcadeCabinet;

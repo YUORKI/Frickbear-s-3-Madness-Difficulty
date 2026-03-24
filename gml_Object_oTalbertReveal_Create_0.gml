@@ -1,0 +1,9 @@
+CurrentSlide = 0;
+Frame = 0;
+FadeTarget = 1;
+Fade = 0;
+FadeSpeed = 1;
+CurDirection = 0;
+PuppetReveal = false;
+GuardSprites = import_sprites("SPOILERS/cutscenes/files.png", sTalbertGuard, 1);
+HandSprites = import_sprites("SPOILERS/cutscenes/heldfiles.png", sTalbertHeldFile, 3, 0, 0, sTalbertHeldFile);

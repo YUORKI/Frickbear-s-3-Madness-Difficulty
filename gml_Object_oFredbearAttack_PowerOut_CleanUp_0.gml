@@ -1,0 +1,1 @@
+global.Brightness = global.BaseBrightness;

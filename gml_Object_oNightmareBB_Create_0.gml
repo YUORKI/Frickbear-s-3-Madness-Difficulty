@@ -1,0 +1,10 @@
+Shakiness = 0;
+Frame = 0;
+HitsLeft = 10;
+HeightSpeed = 0;
+Height = 0;
+Active = false;
+WaitForFlip = true;
+Camera = 0;
+PreviousCamera = 0;
+CanSpawn = false;

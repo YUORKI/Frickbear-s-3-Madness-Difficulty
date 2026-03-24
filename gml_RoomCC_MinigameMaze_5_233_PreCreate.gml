@@ -1,0 +1,1 @@
+Sprite = sMazeDecor_Piping;

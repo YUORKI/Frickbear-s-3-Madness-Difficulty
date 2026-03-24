@@ -1,0 +1,10 @@
+BounceFrame = 0;
+x = 960;
+BaseY = y - 8;
+CurrentImage = 0;
+Image = 0;
+LeaveAcceleration = 10;
+Enter = true;
+Sprite = -1;
+CharacterSpeaking = 0;
+SecondarySprite = sTalksprites_Vanny;

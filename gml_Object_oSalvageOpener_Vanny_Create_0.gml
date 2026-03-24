@@ -1,0 +1,13 @@
+event_inherited();
+Image = 0;
+YOffset = 0;
+YSpeed = 0;
+YBounce = 0.3;
+YSnap = 0.5;
+YTarget = 0;
+Timer = -8.5;
+Audio = -1;
+CutscenePosition = 0;
+CutsceneQueue = [[0, 0], [0, 1], [1.1, 5], [2.6, 2], [5, 4], [7, 3], [8.2, 5], [10.8, 2], [14.6, 5], [15.6, 6], [16.6, 5], [17.9, 4], [18.9, 2], [21, 5], [22.5, 6], [23.1, 5], [24.8, 2], [27, 3], [28.4, 7], [29.6, 8]];
+SubtitleQueue = subtitle(voc_Vanny_Opener);
+CurrentSubtitleLine = 0;

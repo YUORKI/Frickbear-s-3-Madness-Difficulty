@@ -1,0 +1,11 @@
+var CLegs = [x, y, 0];
+var CTorso = [CLegs[0] + rot_x(13, -204, CLegs[2]), CLegs[1] + rot_y(13, -204, CLegs[2]), dsin(Timer) * 2];
+var CHead = [CTorso[0] + rot_x(-30, -90, CTorso[2]), CTorso[1] + rot_y(-30, -90, CTorso[2]), 0];
+var CArm = [CTorso[0] + rot_x(-98, -56, CTorso[2]), CTorso[1] + rot_y(-98, -56, CTorso[2]), dsin(Timer + 45) * 0.5];
+var CWires = [CTorso[0] + rot_x(21, -98, CTorso[2]), CTorso[1] + rot_y(21, -98, CTorso[2]), dsin(Timer + 45) * 2];
+draw_sprite_ext(sWitheredBonnieWires, 0, CWires[0], CWires[1], 1, 1, CWires[2], c_white, 1);
+draw_sprite_ext(sWitheredBonnieLegs, 0, x, y, 1, 1, CLegs[2], c_white, 1);
+draw_sprite_ext(sWitheredBonnieArm, 0, CArm[0], CArm[1], 1, 1, CArm[2], c_white, 1);
+draw_sprite_ext(sWitheredBonnieTorso, 0, CTorso[0], CTorso[1], 1, 1, CTorso[2], c_white, 1);
+draw_sprite_ext(sWitheredBonnieHead, 0, CHead[0], CHead[1], 1, 1, CHead[2], c_white, 1);
+Timer += 2;

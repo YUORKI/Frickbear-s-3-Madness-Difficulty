@@ -1,0 +1,1 @@
+DoorType = 1;

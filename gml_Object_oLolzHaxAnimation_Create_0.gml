@@ -1,0 +1,9 @@
+Frame = 0;
+YOffset = -300;
+YOffsetSpeed = 4;
+HeadOffset = -360;
+HeadOffsetSpeed = 0;
+HeadRotation = 180;
+HeadRotationSpeed = -90;
+WoahMyHeadsSpinning = true;
+SelectionMade = false;

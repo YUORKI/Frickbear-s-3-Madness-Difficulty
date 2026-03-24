@@ -1,0 +1,10 @@
+TargetX = room_width / 2;
+TargetY = room_height / 2;
+x += ((TargetX - x) / 8);
+y += ((TargetY - y) / 8);
+var rX = round(x);
+var rY = round(y);
+var vm = matrix_build_lookat(rX, rY, -10, rX, rY, 0, 0, 1, 0);
+var pm = matrix_build_projection_ortho(Width, Height, 1, 10000000);
+camera_set_view_mat(camera, vm);
+camera_set_proj_mat(camera, pm);

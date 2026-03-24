@@ -1,0 +1,1 @@
+FredbearLevel = 0;

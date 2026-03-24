@@ -1,0 +1,1 @@
+global.Night = 1;

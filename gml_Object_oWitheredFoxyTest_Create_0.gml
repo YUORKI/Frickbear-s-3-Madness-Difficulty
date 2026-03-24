@@ -1,0 +1,9 @@
+Timer = 60;
+BodyY = 256;
+HeadY = 256;
+ArmX = -64;
+ArmY = 256;
+BodyAngle = 30;
+HeadAngle = 0;
+HandMode = "Wait";
+Tolerance = 1;

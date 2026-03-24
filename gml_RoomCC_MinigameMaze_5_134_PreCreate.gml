@@ -1,0 +1,1 @@
+Sprite = sMazeTex_CircusGalleryL;

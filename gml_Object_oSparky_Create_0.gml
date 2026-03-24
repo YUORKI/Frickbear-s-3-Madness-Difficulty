@@ -1,0 +1,16 @@
+CurrentCam = irandom_range(1, 8);
+LastCam = 1;
+ClickedCamX = 0;
+ClickedCamY = 0;
+CurrentCamX = 0;
+CurrentCamY = 0;
+Active = false;
+Offset = 1;
+OffsetSpeed = 0;
+Shake = 0;
+ShakeSpeed = 0;
+ShakeOffset = 0;
+ShockTimer = 0;
+WaitTime = 999;
+KillTimer = 999;
+Randomizer = random_range(0.8, 1.2);

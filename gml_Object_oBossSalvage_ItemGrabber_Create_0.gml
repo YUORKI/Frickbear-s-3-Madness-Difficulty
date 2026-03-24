@@ -1,0 +1,11 @@
+x = -400;
+y = 6;
+Speed = 0;
+Target = -100;
+Frame = 0;
+ItemsGrabbed = false;
+ItemArray = [];
+ItemOffsets = [];
+ItemShift = 1;
+ItemShiftSpeed = 0;
+audio_play_sound(sfxSalvage_WireDrop, 10, false);
