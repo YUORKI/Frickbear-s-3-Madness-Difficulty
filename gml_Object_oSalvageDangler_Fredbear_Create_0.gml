@@ -1,9 +1,0 @@
-Frame = 0;
-image_angle = irandom_range(90, -90);
-Height = 512;
-HeightTarget = 256;
-HeightSpeed = 0;
-MouseValue = 0.4;
-Grabbed = false;
-Timer = 5;
-SoundPlayed = false;

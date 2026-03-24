@@ -1,7 +1,0 @@
-event_inherited();
-Variables = 
-{
-    SpikeFrames: 60,
-    SafeFrames: 120,
-    BaseTimer: 0
-};

@@ -1,9 +1,0 @@
-Activated = false;
-HeightOffset = 128;
-Timer = 0;
-Holding = false;
-Checked = false;
-OriginalX = x;
-OriginalY = y;
-x = -512;
-y = -512;

@@ -1,2 +1,0 @@
-with (oWall)
-    Sorted = false;

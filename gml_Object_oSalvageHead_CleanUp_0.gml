@@ -1,2 +1,0 @@
-with (oDoor)
-    Bounce = false;

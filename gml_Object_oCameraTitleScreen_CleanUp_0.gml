@@ -1,1 +1,0 @@
-texturegroup_unload("BuildingTextures");

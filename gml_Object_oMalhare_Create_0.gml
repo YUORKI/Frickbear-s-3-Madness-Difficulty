@@ -1,1 +1,0 @@
-FlipsLeft = 999;

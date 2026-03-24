@@ -1,2 +1,0 @@
-Text = "?";
-CheatID = 0;

@@ -1,2 +1,0 @@
-Initialize = true;
-Paused = false;
