@@ -113,6 +113,8 @@ if (keyboard_check_pressed(vk_enter))
             else if (SplitLine[1] == "Nightmare")
                 global.Route = UnknownEnum.Value_2;
             
+            global.Difficulty = 0;
+            global.AllTimeSalvages = [UnknownEnum.Value_20, UnknownEnum.Value_33, UnknownEnum.Value_35, UnknownEnum.Value_34, UnknownEnum.Value_0, UnknownEnum.Value_1, UnknownEnum.Value_2, UnknownEnum.Value_3, UnknownEnum.Value_16, UnknownEnum.Value_13, UnknownEnum.Value_14, UnknownEnum.Value_7, UnknownEnum.Value_30, UnknownEnum.Value_38];
             room_goto(NightOpening);
         }
         else if (SplitLine[0] == "cutscene")
@@ -170,12 +172,23 @@ PrompterOffset += ((max((i - 9) * 32, 0) - PrompterOffset) / 10);
 
 enum UnknownEnum
 {
-    Value_2 = 2,
+    Value_0,
+    Value_1,
+    Value_2,
     Value_3,
-    Value_15 = 15,
+    Value_7 = 7,
+    Value_13 = 13,
+    Value_14,
+    Value_15,
+    Value_16,
+    Value_20 = 20,
     Value_29 = 29,
     Value_30,
     Value_31,
+    Value_33 = 33,
+    Value_34,
+    Value_35,
+    Value_38 = 38,
     Value_41 = 41,
     Value_46 = 46,
     Value_56 = 56,

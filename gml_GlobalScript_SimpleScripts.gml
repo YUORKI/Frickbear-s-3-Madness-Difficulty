@@ -109,7 +109,7 @@ function jumpscare(arg0, arg1 = 0, arg2 = 0, arg3 = true, arg4 = true)
         with (instance_create_layer(0, 0, "Camera", oJumpscare))
         {
             Side = arg1;
-            Sprite = skin_sprite(sJumpscare, arg0, ["jumpscare_body.png", "jumpscare_head.png"], 1, 320, 320);
+            Sprite = sJumpscare;
             BodyImage = arg0 * 2;
             HeadImage = (arg0 * 2) + 1;
             

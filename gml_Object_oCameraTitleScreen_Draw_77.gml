@@ -5,7 +5,7 @@ draw_set_alpha(TitleAlpha);
 draw_sprite_ext(sGameTitle, 0, 460, 150 - TitleFlyY, 1, 1, 0, c_white, TitleAlpha);
 draw_set_font(global.FontW97White);
 draw_set_halign(fa_right);
-draw_text(632, 338 + TitleFlyY, "VER. 1.1.1");
+draw_text(632, 338 + TitleFlyY, "VER. 1.1.4");
 shader_set(shFlash);
 draw_sprite_ext(sGameTitle, 0, 460, 150 - TitleFlyY, 1, 1, 0, c_white, TitleBrightness);
 shader_reset();

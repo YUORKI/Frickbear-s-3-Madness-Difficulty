@@ -80,4 +80,3 @@ play_music(musCustomNight);
 draw_set_halign(fa_left);
 SPRITE_FaceActive = skin_hybrid_sprite(sCustomNightFaces, "icon.png");
 SPRITE_FaceInactive = skin_hybrid_sprite(sCustomNightFacesInactive, "icon_gray.png");
-skin_replace_descriptions();

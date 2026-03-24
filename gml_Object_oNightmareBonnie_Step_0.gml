@@ -38,7 +38,7 @@ else
     {
         DoorClosedTime += 0.016666666666666666;
         
-        if ((DoorClosedTime >= 0 || Frame > KillTime) && ClatterGain > 0.25)
+        if (((DoorClosedTime >= 0 || Frame > KillTime) && ClatterGain > 0.25) || Frozen)
         {
             audio_stop_sound(sfxNightmareBonnieRun);
             simple_sound(sfxWindowScare, 256 * Side, 0, false, 1);

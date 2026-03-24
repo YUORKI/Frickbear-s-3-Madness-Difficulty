@@ -84,7 +84,7 @@ function activate_characters(arg0, arg1 = true)
     
     repeat (arg0)
     {
-        var CharID = SummonQueue[CurrentCharacter];
+        var CharID = SummonQueue[min(CurrentCharacter, array_length(SummonQueue) - 1)];
         global.AILevels[CharID] = max(global.AILevels[CharID], clamp(round(lerp(8, 16, global.Difficulty / 3)), global.AILevels[CharID], 20));
         array_push(CharsSummoned, CharID);
         CurrentCharacter++;

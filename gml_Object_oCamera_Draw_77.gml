@@ -81,7 +81,10 @@ var CamSize = 1;
 var CamTop = (1 - CamAnimation) * 400;
 var MonitorY = (1 - CamAnimation) * 480;
 draw_sprite_ext(sMonitorScreen, 0, 320, 180 + MonitorY, CamSize, CamSize, 0, -1, CamAlpha);
-draw_sprite_ext(MaskSprite, MaskImage + (global.Guard * 2), 320, 180 - ((1 - MaskAnimation) * 480), CamSize, CamSize, 0, -1, 1);
+
+if (sprite_exists(MaskSprite))
+    draw_sprite_ext(MaskSprite, MaskImage + (global.Guard * 2), 320, 180 - ((1 - MaskAnimation) * 480), CamSize, CamSize, 0, -1, 1);
+
 draw_set_alpha(0.5 * CamAlpha);
 draw_sprite_part(sMonitorReflection, 0, 0, CamTop, 640, 360 - CamTop, 0, CamTop);
 draw_set_alpha(0.25 * CamAlpha);
@@ -260,8 +263,12 @@ if (instance_exists(oJumpscare))
         var Vibration = (oJumpscare.Frame / 5) + 1;
         var FrameVal = 1 - (floor(oJumpscare.Frame) % 3);
         var Offset = (round(((FrameVal * 2) / Vibration) * 80) / 10) + (sqrt(oJumpscare.Frame) * oJumpscare.OriginX * 2);
-        draw_sprite_ext(oJumpscare.Sprite, oJumpscare.BodyImage, oJumpscare.JumpX + Offset, oJumpscare.JumpY, oJumpscare.SizeBody, oJumpscare.SizeBody, oJumpscare.JumpAngle, -1, 1);
-        draw_sprite_ext(oJumpscare.Sprite, oJumpscare.HeadImage, oJumpscare.JumpX, oJumpscare.JumpY, oJumpscare.SizeHead, oJumpscare.SizeHead, Offset + oJumpscare.JumpAngle, -1, 1);
+        
+        if (sprite_exists(oJumpscare.Sprite))
+        {
+            draw_sprite_ext(oJumpscare.Sprite, oJumpscare.BodyImage, oJumpscare.JumpX + Offset, oJumpscare.JumpY, oJumpscare.SizeBody, oJumpscare.SizeBody, oJumpscare.JumpAngle, -1, 1);
+            draw_sprite_ext(oJumpscare.Sprite, oJumpscare.HeadImage, oJumpscare.JumpX, oJumpscare.JumpY, oJumpscare.SizeHead, oJumpscare.SizeHead, Offset + oJumpscare.JumpAngle, -1, 1);
+        }
     }
 }
 

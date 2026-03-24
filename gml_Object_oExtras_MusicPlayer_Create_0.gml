@@ -13,10 +13,12 @@ function has(arg0)
 }
 
 StreamedList = [];
+MusicList = [];
 
 function append_custom_music()
 {
-    var CustomMusic = {};
+    get_folders("addons");
+    var CustomMusic = [];
     
     for (var i = 4; i < array_length(global.GuardNames); i++)
     {
@@ -507,6 +509,7 @@ with (oLoopingMusicPlayer)
 
 Grooving = false;
 append_custom_music();
+show_debug_message(global.GuardNames);
 
 enum UnknownEnum
 {

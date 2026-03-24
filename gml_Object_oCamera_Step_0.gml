@@ -251,12 +251,12 @@ if (global.Timer >= 360 && !audio_is_playing(sfxWarioLose) && !Block6AMTransitio
 if (StareFrames > -180)
     StareFrames--;
 
-if (keyboard_check(ord("F")) && keyboard_check(ord("B")) && global.DevMode)
+if (keyboard_check(ord("F")) && keyboard_check_pressed(ord("B")) && global.DevMode)
 {
     if (BossMode == UnknownEnum.Value_2)
     {
         with (oSalvage)
-            lose_hp(100, true);
+            lose_hp(20, true);
     }
     else if (BossMode == UnknownEnum.Value_3)
     {

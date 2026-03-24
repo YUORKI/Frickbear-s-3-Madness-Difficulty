@@ -331,7 +331,7 @@ function game_text(arg0)
                 default:
                     if (get_guard_property("new_opening_dialogue", false))
                     {
-                        read_custom_dialogue("cutscenes/cutscene_Opening.txt", "DIALOGUE");
+                        read_custom_dialogue("dialogue/cutscene_Opening.txt", "DIALOGUE");
                     }
                     else
                     {
@@ -1086,10 +1086,6 @@ function game_text(arg0)
                         
                         case 3:
                             add_page("I know how these stories go, the kid dies. Go on, just skip to that part.", "Fritz");
-                            break;
-                        
-                        default:
-                            add_page("...WHAT? YOU DIDN'T SAY ANYTHING? YOU WANT ME TO CONTINUE?", "Upgrade Cadet");
                             break;
                     }
                     
@@ -2561,7 +2557,7 @@ function game_text(arg0)
                     break;
                 
                 default:
-                    read_custom_dialogue("properties.txt", "animdude", [["Nice, uh...whatever you've got on.", "Animdude"]]);
+                    read_custom_dialogue("SPOILERS/spoiler_properties.txt", "animdude", [["Nice, uh...whatever you've got on.", "Animdude"]]);
                     break;
             }
             
@@ -2684,7 +2680,7 @@ function game_text(arg0)
         case "Popgoes":
             if (array_length(global.SalvagesCurrent) >= global.SalvageQuota)
             {
-                add_page("Your quota's already been met! No point in salvSaging this guy.", "");
+                add_page("Your quota's already been met! No point in salvaging this guy.", "");
                 break;
             }
             
@@ -2724,7 +2720,7 @@ function game_text(arg0)
                     break;
                 
                 default:
-                    read_custom_dialogue("properties.txt", "popgoes", [["If you did, maybe that would make him myPOPGOES.", ""], ["Er...yourPOPGOES? I suppose this joke really only works in first person.", ""]]);
+                    read_custom_dialogue("SPOILERS/spoiler_properties.txt", "popgoes", [["If you did, maybe that would make him myPOPGOES.", ""], ["Er...yourPOPGOES? I suppose this joke really only works in first person.", ""]]);
                     break;
             }
             
@@ -2773,7 +2769,7 @@ function game_text(arg0)
                     break;
                 
                 default:
-                    read_custom_dialogue("properties.txt", "rodney", [["Despite his bravado...you don't actually recognize this character at all.", ""]]);
+                    read_custom_dialogue("SPOILERS/spoiler_properties.txt", "rodney", [["Despite his bravado...you don't actually recognize this character at all.", ""]]);
             }
             
             add_page("...What? C'mon, SURELY you recognize me. EVERYONE recognizes me!", "Rodney");
@@ -4616,7 +4612,7 @@ function game_text(arg0)
                 default:
                     if (get_guard_property("new_cassidy_dialogue", false, global.Guard, true))
                     {
-                        read_custom_dialogue("/SPOILERS/dialogue/cutscene_Cassidy.txt", "DIALOGUE");
+                        read_custom_dialogue("SPOILERS/dialogue/cutscene_Cassidy.txt", "DIALOGUE");
                     }
                     else
                     {

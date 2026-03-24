@@ -35,6 +35,7 @@ function can_play_dialogue(arg0, arg1)
 
 function read_custom_dialogue(arg0, arg1 = "DIALOGUE", arg2, arg3)
 {
+    arg0 = "/" + arg0;
     var Import = import_dialogue(global.Guard, arg0);
     
     if (can_play_dialogue(arg0) && variable_struct_exists(Import, arg1))
@@ -44,6 +45,7 @@ function read_custom_dialogue(arg0, arg1 = "DIALOGUE", arg2, arg3)
     }
     else
     {
+        show_debug_message("Dialogue could not be played");
         read_script(arg2, arg3);
     }
 }
@@ -102,7 +104,7 @@ function handle_line(arg0, arg1)
         
         case "_money":
             var defaultMoneyScript = [["_delay", 120], ["_func", [["playSound", "sfxPhoneRing", 10, true]]], ["...Seems like something else has come up.", ""], ["_func", [["stopSound", "sfxPhoneRing"], ["playSound", "sfxPhonePickup", 10, false]]], ["_delay", 120], ["WAAAAAAAAAAHH!!", "The Boss"], ["_effect", 0, 99, "Shake"], ["_func", [["playMusic", "musMidnight_TheBoss", 0.5]]], ["I've been SCAMMED! SWINDLED! HOODWINKED!", "The Boss"], ["_effect", 10, 99, "Shake"], ["When were you gonna tell me about these files, huh!?", "The Boss"], ["...What!? Don't tell me you don't know what I'm talking about!", "The Boss"], ["The ones I found in your office, you stooge! I took a look through them, and as it turns out...", "The Boss"], ["Those jerks who sold me the company were hiding MILLIONS in property RIGHT UNDER MY NOSE!", "The Boss"], ["Look, you're the only chump I can trust with this, so shut your trap and listen up!", "The Boss"], ["According to these files, there's a secret bunker out there in the middle of the woods.", "The Boss"], ["And, more importantly...the place is stuffed to the brim with animatronics that could make me RRRRRRRICH!!", "The Boss"], ["_effect", 94, 128, "Shake"], ["_split", false, "IsGoodOrEvil", false, [["...What? You just wanna go home?", "The Boss"], ["Grrr...FINE! I'll sweeten the deal.", "The Boss"], ["If you do this for me, I'll take you out to a steakhouse I like. My treat!", "The Boss"], ["...Huh? It's a deal?", "The Boss"], ["Wahaha, excellent! I knew I could count on you.", "The Boss"], ["Now MOVE IT!! Time is money!", "The Boss"], ["_effect", 4, 13, "Shake"]], [["I need you to crawl down there and retrieve those bots! And it better be NOW!", "The Boss"], ["...Oh, and if you do, I'll, uh...take you out to dinner or something. My treat!", "The Boss"], ["I BETTER see you there!", "The Boss"]]], ["_delay", 120], ["_func", [["stopSound", "musMidnight_TheBoss"], ["playSound", "sfxPhonePickup", 10, false]]], ["_split", false, "IsGoodOrEvil", true, [["...Well, you can't do two things at once. You've got a choice to make here.", ""], ["Who will you along with?", ""], ["_option", ["Help the Boss", "ChoiceConfirm_Money"]], ["_split", false, "IsGood", true, [["_option", ["Help Michael", "ChoiceConfirm_Good"]]], [["_option", ["Help the Rabbit", "ChoiceConfirm_Evil"]]]]], [["...Seems your work isn't over quite yet.", ""], ["Time to see what awaits you in the Faz-bunker.", ""], ["_func", [["salvage"]]]]]];
-            read_custom_dialogue("/SPOILERS/dialogue/cutscene_Midnight_Night5_Money.txt", "DIALOGUE", defaultMoneyScript, arg1);
+            read_custom_dialogue("SPOILERS/dialogue/cutscene_Midnight_Night5_Money.txt", "DIALOGUE", defaultMoneyScript, arg1);
             break;
         
         case "_prescripted_sequence":
@@ -282,6 +284,12 @@ function handle_func(arg0)
             break;
         
         case "salvage":
+            if (global.Night == 1 && global.Difficulty < 3)
+                array_push(global.AllTimeSalvages, UnknownEnum.Value_14);
+            
+            if (global.Night == 5)
+                global.Route = UnknownEnum.Value_1;
+            
             instance_create_depth(0, 0, 0, oTransitionMinigame);
             break;
         
@@ -373,7 +381,9 @@ function read_script(arg0, arg1 = {})
 
 enum UnknownEnum
 {
-    Value_2 = 2,
+    Value_1 = 1,
+    Value_2,
     Value_3,
+    Value_14 = 14,
     Value_41 = 41
 }

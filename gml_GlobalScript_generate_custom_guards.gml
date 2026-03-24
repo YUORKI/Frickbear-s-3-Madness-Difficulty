@@ -8,6 +8,7 @@ function int_to_suffix(arg0)
 
 function get_folders(arg0 = "addons", arg1 = "*")
 {
+    global.GuardNames = ["Jeremy", "Mike", "Vanessa", "Fritz"];
     var folders = [];
     var folder = file_find_first(working_directory + arg0 + "/" + arg1, 16);
     
@@ -541,7 +542,6 @@ function import_dialogue(arg0, arg1 = "/opening_dialogue.txt", arg2 = false)
         }
     }
     
-    show_message(string("ERR: {0}'s {1} file appears to be missing or incorrectly named. Data could not be imported.", guard_name(), arg1));
     return 
     {
         DIALOGUE: ["There was an error loading the dialogue. Bet you feel real stupid now, huh?"],
