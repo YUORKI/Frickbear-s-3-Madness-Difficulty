@@ -1,0 +1,12 @@
+ObjectWidth = 16 * image_xscale;
+ObjectHeight = 16 * image_yscale;
+x1 = x - ObjectWidth;
+y1 = y - ObjectHeight;
+x2 = x + ObjectWidth;
+y2 = y - ObjectHeight;
+x3 = x - ObjectWidth;
+y3 = y + ObjectHeight;
+x4 = x + ObjectWidth;
+y4 = y + ObjectHeight;
+Texture = sprite_get_texture(sMazeTex_Shelf, 0);
+sprite_index = sMazeTex_Ceiling;

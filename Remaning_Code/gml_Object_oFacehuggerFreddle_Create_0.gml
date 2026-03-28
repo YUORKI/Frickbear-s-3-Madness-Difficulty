@@ -1,0 +1,9 @@
+HeightOffset = 128;
+OffsetSpeed = 10;
+Flashed = false;
+HeadAngle = 0;
+HeadAngleSpeed = 0;
+HeadAngleTarget = 0;
+BodyAngle = 0;
+HeadTiltFrames = 60;
+HeadSprite = 0;

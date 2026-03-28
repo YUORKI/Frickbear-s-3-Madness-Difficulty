@@ -1,0 +1,12 @@
+WaitTime = 999;
+Head = instance_create_layer(x, y, "Behind_Wall", oOfficeSprite);
+Head.sprite_index = sCandy_Head;
+Body = instance_create_layer(x, y, "Behind_Wall", oOfficeSprite);
+Body.sprite_index = sCandy_Body;
+ArmL = instance_create_layer(x, y, "Behind_Wall", oOfficeSprite);
+ArmL.sprite_index = sCandy_Arm;
+ArmR = instance_create_layer(x, y, "Behind_Wall", oOfficeSprite);
+ArmR.sprite_index = sCandy_Arm;
+Position = 0;
+Mode = 2;
+Speed = 0;

@@ -1,0 +1,15 @@
+depth = Height;
+draw_3d_square(x1, y1, x2, y2, x3, y3, x4, y4, Height, Height - 8, image_xscale, image_yscale, Texture, Texture, Texture, Texture);
+VertexBuffer = vertex_create_buffer();
+vertex_begin(VertexBuffer, global.VertexFormat);
+var zBottom = Height - 8;
+vertex_set_point(VertexBuffer, x1, y1, zBottom, 0, 0);
+vertex_set_point(VertexBuffer, x2, y2, zBottom, 1, 0);
+vertex_set_point(VertexBuffer, x3, y3, zBottom, 0, 1);
+vertex_set_point(VertexBuffer, x2, y2, zBottom, 1, 0);
+vertex_set_point(VertexBuffer, x3, y3, zBottom, 0, 1);
+vertex_set_point(VertexBuffer, x4, y4, zBottom, 1, 1);
+vertex_end(VertexBuffer);
+vertex_submit(VertexBuffer, pr_trianglelist, sprite_get_texture(sMazeTex_Ceiling, 0));
+vertex_delete_buffer(VertexBuffer);
+draw_self();

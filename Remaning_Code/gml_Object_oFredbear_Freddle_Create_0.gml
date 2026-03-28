@@ -1,0 +1,14 @@
+Head = instance_create_layer(0, 0, "Behind_Wall", oOfficeSprite);
+Body = instance_create_layer(0, 0, "Behind_Wall", oOfficeSprite);
+HeightOffset = 128;
+OffsetSpeed = 10;
+Flashed = false;
+HeadAngle = 0;
+HeadAngleSpeed = 0;
+HeadAngleTarget = 0;
+BodyAngle = 0;
+HeadTiltFrames = 60;
+TimeToKill = 10;
+SlotID = 0;
+HeadSprite = irandom(2);
+Sound = undefined;

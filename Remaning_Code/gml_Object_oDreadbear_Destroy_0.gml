@@ -1,0 +1,11 @@
+instance_destroy(oCandyBowl);
+instance_destroy(lHand);
+instance_destroy(rHand);
+instance_destroy(lLArm);
+instance_destroy(rLArm);
+instance_destroy(lUArm);
+instance_destroy(rUArm);
+instance_destroy(brow);
+instance_destroy(head);
+instance_destroy(jaw);
+instance_destroy(torso);
