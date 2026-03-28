@@ -201,9 +201,6 @@ function get_trophy_name(arg0)
         
         case UnknownEnum.Value_46:
             return "Unkillable";
-
-        case UnknownEnum.Value_47:
-            return "Pure Madness";
         
         default:
             return "No Trophy Title Found :(";

@@ -2,7 +2,7 @@ Timer = 0;
 YOffset = 56;
 Active = true;
 TileSize = 0;
-TrophyAmount = 48;
+TrophyAmount = 47;
 Trophies = array_create(TrophyAmount, 
 {
     Name: "???",
@@ -293,12 +293,6 @@ Trophies[UnknownEnum.Value_46] =
     Desc: "Beat a run on Lunatic difficulty without dying once.",
     Display: false,
     Icon: UnknownEnum.Value_54
-};
-Trophies[UnknownEnum.Value_47] = 
-{
-    Desc: "Beat Madness Mode.",
-    Display: false,
-    Icon: UnknownEnum.Value_46
 };
 
 enum UnknownEnum
