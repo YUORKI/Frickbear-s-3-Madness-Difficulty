@@ -106,7 +106,7 @@ if (!instance_exists(oExtras_Credits))
     
     global.ClearedEndings[global.Difficulty][global.Route]++;
     
-    if (!array_contains(global.ClearedEndings[3], 0))
+    if (!array_contains(global.ClearedEndings[4], 0))
         get_trophy(UnknownEnum.Value_41);
     
     global.UnlockedAnimatronics[UnknownEnum.Value_66 + global.Difficulty] = true;
