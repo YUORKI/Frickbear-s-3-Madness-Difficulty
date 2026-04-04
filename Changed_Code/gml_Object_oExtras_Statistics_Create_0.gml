@@ -279,7 +279,7 @@ function get_stats(arg0)
             break;
         
         case 5:
-            var DifficultyNames = ["Easy", "Normal", "Hard", global.UnlockedAnimatronics[UnknownEnum.Value_68] ? "Lunatic" : "" , "Madness"];
+            var DifficultyNames = ["Easy", "Normal", "Hard", global.UnlockedAnimatronics[UnknownEnum.Value_68] ? "Lunatic" , "Madness" : ""];
             var EndingCompletions = array_create(array_length(global.ClearedEndings[1]), 0);
             array_push(StatsArray, ["", "Slacker", "Money", "Good", "Evil", "Ultimate", "Total"]);
             array_push(StatsArray, ["----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"]);
@@ -331,7 +331,5 @@ enum UnknownEnum
     Value_55 = 55,
     Value_56,
     Value_66 = 66,
-    Value_68 = 68,
-    Value_69,
-    Value_70
+    Value_68 = 68
 }
