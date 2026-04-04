@@ -26,20 +26,7 @@ if (!Freeze || instance_exists(oJumpscarePhantoms))
         HandheldOffset += ((740 - HandheldOffset) / 5);
     
     if (surface_exists(global.MinigameSurface))
-    {
         draw_surface_ext(global.MinigameSurface, 160, 36 + (HandheldOffset - 360), 2, 2, 0, c_white, 1);
-        var BlurbWindowSize = 80;
-        
-        if (instance_exists(oHD_Guard) && instance_exists(oHappiestDayDrawer))
-        {
-            var SurfaceX = (oHD_Guard.x + (80 - (BlurbWindowSize / 2))) - oHappiestDayDrawer.x;
-            var SurfaceY = (oHD_Guard.y + (72 - (BlurbWindowSize / 2))) - oHappiestDayDrawer.y;
-            SurfaceX = clamp(SurfaceX, 0, 160 - BlurbWindowSize);
-            SurfaceY = clamp(SurfaceY, 0, 144 - BlurbWindowSize);
-            draw_surface_part(global.MinigameSurface, SurfaceX, SurfaceY, BlurbWindowSize, BlurbWindowSize, 320 - (BlurbWindowSize / 2), (370 - BlurbWindowSize) + (720 - HandheldOffset));
-            draw_sprite(sNightmareMinigameMiniWindow, 0, 320 - (BlurbWindowSize / 2), (370 - BlurbWindowSize) + (720 - HandheldOffset));
-        }
-    }
     
     if (instance_exists(oVanniMask) && CamAlpha == 1)
         draw_sprite_ext(sVanniOverlay, 0, 320, 180, oVanniMask.OverlaySize, oVanniMask.OverlaySize, 0, c_white, (0.6 + (dsin(oVanniMask.Timer * 2) * 0.2)) * oVanniMask.Alpha);
@@ -81,15 +68,7 @@ var CamSize = 1;
 var CamTop = (1 - CamAnimation) * 400;
 var MonitorY = (1 - CamAnimation) * 480;
 draw_sprite_ext(sMonitorScreen, 0, 320, 180 + MonitorY, CamSize, CamSize, 0, -1, CamAlpha);
-
-if (sprite_exists(MaskSprite))
-    draw_sprite_ext(MaskSprite, MaskImage + (global.Guard * 2), 320, 180 - ((1 - MaskAnimation) * 480), CamSize, CamSize, 0, -1, 1);
-
-draw_set_alpha(0.5 * CamAlpha);
-draw_sprite_part(sMonitorReflection, 0, 0, CamTop, 640, 360 - CamTop, 0, CamTop);
-draw_set_alpha(0.25 * CamAlpha);
-draw_sprite_part(FaceSprites, (global.Guard * 2) + (BossMode != UnknownEnum.Value_0), 0, CamTop, 640, 360 - CamTop, 0, CamTop);
-draw_set_alpha(1);
+draw_sprite_ext(MaskSprite, MaskImage + (global.Guard * 2), 320, 180 - ((1 - MaskAnimation) * 480), CamSize, CamSize, 0, -1, 1);
 
 if (global.CamUp && !ShowMalhare)
 {
@@ -98,15 +77,7 @@ if (global.CamUp && !ShowMalhare)
         oMalhare.FlipsLeft--;
         
         if (oMalhare.FlipsLeft <= 10)
-        {
-            if (oMalhare.FlipsLeft == 10)
-                audio_play_sound(voc_Malhare_LaughAppear, 5, false, 0.5);
-            
-            if (oMalhare.FlipsLeft == 0)
-                audio_play_sound(voc_Malhare_LaughEnd, 5, false, 0.5);
-            
             audio_play_sound(sfxMalhareBlip, 5, false);
-        }
         
         ShowMalhare = true;
     }
@@ -144,6 +115,12 @@ if (ShowMalhare && instance_exists(oMalhare))
     }
 }
 
+draw_set_alpha(0.5 * CamAlpha);
+draw_sprite_part(sMonitorReflection, 0, 0, CamTop, 640, 360 - CamTop, 0, CamTop);
+draw_set_alpha(0.25 * CamAlpha);
+draw_sprite_part(FaceSprites, (global.Guard * 2) + (BossMode != UnknownEnum.Value_0), 0, CamTop, 640, 360 - CamTop, 0, CamTop);
+draw_set_alpha(1);
+
 if (!Freeze || instance_exists(oJumpscarePhantoms))
 {
     draw_sprite(sOfficeUI, 0, 0, 0);
@@ -152,39 +129,29 @@ if (!Freeze || instance_exists(oJumpscarePhantoms))
     var TimerA;
     
     if (TimerHour == 0)
-        TimerA = string("12");
+        TimerA = "12";
     else
         TimerA = string(TimerHour);
     
     var TimerB;
     
     if (TimerMinute < 10)
-        TimerB = string("0") + string(TimerMinute);
+        TimerB = "0" + string(TimerMinute);
     else
         TimerB = string(TimerMinute);
     
     var TimerC;
     
     if ((floor(global.Timer / 720) % 2) == 0)
-        TimerC = string(" AM");
+        TimerC = " AM";
     else
-        TimerC = string(" PM");
+        TimerC = " PM";
     
-    var Text = string(TimerA) + string(":") + string(TimerB) + string(TimerC);
-    
-    if (BossMode != UnknownEnum.Value_0 && BossMode != UnknownEnum.Value_3)
-        Text = "Phase " + string(global.BossPhase);
-    
+    var Text = string(TimerA) + ":" + string(TimerB) + string(TimerC);
     var NightText = "Night " + string(global.Night);
     
     if (is_string(global.Night))
         NightText = string(global.Night);
-    
-    if (global.Night == "Custom" && global.Route != UnknownEnum.Value_0)
-    {
-        NightText = format_as_timer(BossTimer, true);
-        BossTimer += 0.016666666666666666;
-    }
     
     draw_text_color(34, 6, Text, c_white, c_white, c_white, c_white, 1);
     draw_text_color(34, 23, NightText, c_white, c_white, c_white, c_white, 1);
@@ -226,17 +193,8 @@ if (!Freeze || instance_exists(oJumpscarePhantoms))
     draw_text_color(560, 3 + TokenBoxOffset, "Tokens: ", c_white, c_white, c_white, c_white, 1);
     draw_set_halign(fa_right);
     draw_text_color(632, 3 + TokenBoxOffset, floor(global.Tokens), c_white, c_white, c_white, c_white, 1);
-    
-    if (!global.CamUp && mouse_in_zone(554, 2, 84, 88))
-    {
-        TokenBoxOffset += ((-24 - TokenBoxOffset) / 5);
-        TokenBoxSpeed = 0;
-    }
-    else
-    {
-        TokenBoxSpeed = lerp(TokenBoxSpeed, (0 - TokenBoxOffset) * 0.8, 0.2);
-        TokenBoxOffset += TokenBoxSpeed;
-    }
+    TokenBoxSpeed = lerp(TokenBoxSpeed, (0 - TokenBoxOffset) * 0.8, 0.2);
+    TokenBoxOffset += TokenBoxSpeed;
 }
 
 draw_set_alpha(EntranceAlpha);
@@ -253,23 +211,11 @@ if (Freezeframe != undefined)
 if (instance_exists(oJumpscare))
 {
     draw_sprite_ext(sFlashlight, 0, 320, 180, 1, 1, 0, -1, global.Brightness);
-    
-    if (global.Jumpscare == UnknownEnum.Value_55)
-    {
-        draw_sprite(sJumpscare_Fredbear, floor(oJumpscare.Frame / 2), 0, 0);
-    }
-    else
-    {
-        var Vibration = (oJumpscare.Frame / 5) + 1;
-        var FrameVal = 1 - (floor(oJumpscare.Frame) % 3);
-        var Offset = (round(((FrameVal * 2) / Vibration) * 80) / 10) + (sqrt(oJumpscare.Frame) * oJumpscare.OriginX * 2);
-        
-        if (sprite_exists(oJumpscare.Sprite))
-        {
-            draw_sprite_ext(oJumpscare.Sprite, oJumpscare.BodyImage, oJumpscare.JumpX + Offset, oJumpscare.JumpY, oJumpscare.SizeBody, oJumpscare.SizeBody, oJumpscare.JumpAngle, -1, 1);
-            draw_sprite_ext(oJumpscare.Sprite, oJumpscare.HeadImage, oJumpscare.JumpX, oJumpscare.JumpY, oJumpscare.SizeHead, oJumpscare.SizeHead, Offset + oJumpscare.JumpAngle, -1, 1);
-        }
-    }
+    var Vibration = (oJumpscare.Frame / 5) + 1;
+    var FrameVal = 1 - (floor(oJumpscare.Frame) % 3);
+    var Offset = (round(((FrameVal * 2) / Vibration) * 80) / 10) + (sqrt(oJumpscare.Frame) * oJumpscare.OriginX * 2);
+    draw_sprite_ext(oJumpscare.Sprite, oJumpscare.BodyImage, oJumpscare.JumpX + Offset, oJumpscare.JumpY, oJumpscare.SizeBody, oJumpscare.SizeBody, oJumpscare.JumpAngle, -1, 1);
+    draw_sprite_ext(oJumpscare.Sprite, oJumpscare.HeadImage, oJumpscare.JumpX, oJumpscare.JumpY, oJumpscare.SizeHead, oJumpscare.SizeHead, Offset + oJumpscare.JumpAngle, -1, 1);
 }
 
 surface_reset_target();
@@ -277,7 +223,5 @@ surface_reset_target();
 enum UnknownEnum
 {
     Value_0,
-    Value_3 = 3,
-    Value_37 = 37,
-    Value_55 = 55
+    Value_37 = 37
 }
