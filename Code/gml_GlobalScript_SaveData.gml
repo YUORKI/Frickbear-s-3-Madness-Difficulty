@@ -47,7 +47,7 @@ function initialize_save_data()
     global.ClearedChallenges = array_create(30, false);
     global.Playtime = 0;
     global.UnlockFlags = [];
-    global.ClearedEndings = array_create(4, array_create(5, 0));
+    global.ClearedEndings = array_create(5, array_create(5, 0));
     global.ExtrasNotifs = 
     {
         AnimatronicsNotifs: array_create(80, bool(true)),
